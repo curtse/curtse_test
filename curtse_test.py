@@ -113,3 +113,33 @@ if os.path.isfile(filename):
     print("found")
 else:
     print("not found")
+
+# Loop variant to check if all files exist. use os.path.isfile instead of glob 
+
+import os
+import glob
+
+# Directory path where the Excel files are located
+directory_path = 'path/to/directory'
+
+# List of the eight specific Excel files to check for
+files_to_check = ['file1.xlsx', 'file2.xlsx', 'file3.xlsx', 'file4.xlsx', 'file5.xlsx', 'file6.xlsx', 'file7.xlsx', 'file8.xlsx']
+
+# Variable to keep track of the number of files found
+files_found = 0
+
+# Loop through the files_to_check list
+for file in files_to_check:
+    file_path = os.path.join(directory_path, file)  # Get the full file path by joining directory path and file name
+    if glob.glob(file_path):  # Check if the file exists
+        files_found += 1
+    else:
+        print("Fail")
+        break
+
+# Check if all files were found
+if files_found == len(files_to_check):
+    print("Number of files found: ", files_found)
+
+
+
