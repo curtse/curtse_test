@@ -52,7 +52,7 @@ wb_output1.close()
 wb_output2.close()
 
 
-# now the same using pandas instead of openpyxl
+### now the same using pandas instead of openpyxl
 
 import pandas as pd
 
@@ -79,7 +79,7 @@ df_output1.to_excel('Output.xlsx', sheet_name='Output1', index=False)
 df_output2.to_excel('Output.xlsx', sheet_name='Output2', index=False)
 
 
-# get filename
+### get filename
 
 
 import pandas as pd
@@ -99,3 +99,17 @@ df = pd.read_excel(filename)
 
 # Display
 print(df)
+
+
+### check file exists
+
+import os
+
+# Specify the filename to check
+filename = "example.txt"
+
+# Check if the file exists
+if os.path.isfile(filename):
+    print("found")
+else:
+    print("not found")
