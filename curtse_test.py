@@ -13,7 +13,7 @@ def square_x(x):
 print(x)
 
 
-""" unrelated, excel sheets copy paste
+# unrelated, excel sheets copy paste
 
 import openpyxl
 
@@ -52,7 +52,7 @@ wb_output1.close()
 wb_output2.close()
 
 
-""" now the same using pandas instead of openpyxl
+# now the same using pandas instead of openpyxl
 
 import pandas as pd
 
