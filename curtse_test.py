@@ -50,3 +50,30 @@ wb_input1.close()
 wb_input2.close()
 wb_output1.close()
 wb_output2.close()
+
+
+""" now the same using pandas instead of openpyxl
+
+import pandas as pd
+
+# Load Input1.xlsx workbook and Sheet1 into a DataFrame
+df_input1 = pd.read_excel('Input1.xlsx', sheet_name='Sheet1')
+
+# Load Input2.xlsx workbook and Sheet2 into a DataFrame
+df_input2 = pd.read_excel('Input2.xlsx', sheet_name='Sheet2')
+
+# Load Output.xlsx workbook and Output1 worksheet into a DataFrame
+df_output1 = pd.read_excel('Output.xlsx', sheet_name='Output1')
+
+# Load Output.xlsx workbook and Output2 worksheet into a DataFrame
+df_output2 = pd.read_excel('Output.xlsx', sheet_name='Output2')
+
+# Append data from Sheet1 in Input1.xlsx to Output1.xlsx
+df_output1 = df_output1.append(df_input1, ignore_index=True)
+
+# Append data from Sheet2 in Input2.xlsx to Output2.xlsx
+df_output2 = df_output2.append(df_input2, ignore_index=True)
+
+# Write changes to Output1.xlsx and Output2.xlsx
+df_output1.to_excel('Output.xlsx', sheet_name='Output1', index=False)
+df_output2.to_excel('Output.xlsx', sheet_name='Output2', index=False)
