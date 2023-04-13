@@ -77,3 +77,25 @@ df_output2 = df_output2.append(df_input2, ignore_index=True)
 # Write changes to Output1.xlsx and Output2.xlsx
 df_output1.to_excel('Output.xlsx', sheet_name='Output1', index=False)
 df_output2.to_excel('Output.xlsx', sheet_name='Output2', index=False)
+
+
+# get filename
+
+
+import pandas as pd
+import datetime
+
+# Get yesterday's date
+yesterday = datetime.date.today() - datetime.timedelta(days=1)
+
+# Format yesterday's date as DDMMYY
+date_str = yesterday.strftime('%d%m%y')
+
+# Construct the filename with the formatted date
+filename = f"sheet{date_str}.xlsx"
+
+# Load the DataFrame from the Excel workbook
+df = pd.read_excel(filename)
+
+# Display
+print(df)
