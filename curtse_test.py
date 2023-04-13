@@ -141,5 +141,30 @@ for file in files_to_check:
 if files_found == len(files_to_check):
     print("Number of files found: ", files_found)
 
+### or better
+
+import os
+
+# List of file names to check
+files_to_check = ['file1.xlsx', 'file2.xlsx', 'file3.xlsx', 'file4.xlsx', 'file5.xlsx', 'file6.xlsx', 'file7.xlsx', 'file8.xlsx']
+
+# Directory to search for the files
+directory = '/path/to/directory'  # Update with your directory path
+
+# Initialize a counter for counting the number of files found
+files_found = 0
+
+# Loop through the list of files to check
+for file_name in files_to_check:
+    # Check if the file exists in the directory
+    if os.path.isfile(os.path.join(directory, file_name)):
+        files_found += 1
+    else:
+        print("Fail")
+        exit()
+
+# Check if all files were found
+if files_found == len(files_to_check):
+    print("Number of files found:", files_found)
 
 
