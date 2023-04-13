@@ -114,7 +114,7 @@ if os.path.isfile(filename):
 else:
     print("not found")
 
-# Loop variant to check if all files exist. use os.path.isfile instead of glob 
+### Loop variant to check if all files exist. use os.path.isfile instead of glob 
 
 import os
 import glob
